@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+
+    <!-- Put this near the top of your head section -->
+    <link rel="preload" href="logo.png" as="image" type="image/png">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="meta-title">Loading...</title>
+
+    <!-- ☕ COPPERWHEATS CUSTOM FAVICON INJECTION -->
+    <link rel="icon" type="image/png" href="./favicon.png" sizes="150x150">
+    <link rel="apple-touch-icon" href="./favicon.png">
+
+    <!-- 🚀 ADD THIS DATA CONTAINER TO CATCH THE INJECTED SEO VALUES -->
+    <script id="seo-schema" type="application/ld+json"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" id="theme-stylesheet" href="./styles/coffee.css">
+</head>
+<body>
+    <!-- We check to see if browser first time open. Simply setting a boolean value-->
+    <script>
+        if (sessionStorage.getItem('splashShown')) {
+            document.documentElement.classList.add('skip-splash');
+        }
+    </script>
+
+    <!-- The Fullscreen Splash Screen Overlay -->
+    <div id="site-splash-screen" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0f172a; z-index: 99999; display: flex; align-items: center; justify-content: center; transition: background 0.8s ease, opacity 0.6s ease, visibility 0.8s ease;">
+        
+        <!-- 🌟 PRE-SIZED ANCHOR: Added a default fallback width/height matching your 120px frame so it doesn't flicker while JS fires -->
+        <div id="splash-logo-frame" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; overflow: visible !important; width: 120px; height: 120px; border-radius: 50%; transform: scale(12.2); transition: transform 3.0s cubic-bezier(0.25, 1, 0.5, 1);">
+            
+            <!-- 🌟 PRE-SIZED IMAGE: Added fallback dimensions matching your config defaults -->
+            <img id="splash-logo-image" src="logo.png" alt="Brand Emblem" 
+                style="display: block !important; width: 120px; height: 120px; max-width: none !important; object-fit: contain; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 10;">
+        </div>
+    </div>
+
+    <header class="header-sticky" id="main-content-wrapper">
+        <div class="container nav-container">
+
+
+        <a href="/" class="brand-logo" data-target="home" style="display: inline-flex !important; align-items: center !important; gap: 55px !important; text-decoration: none !important;">
+            <svg id="nav-logo-vector" class="logo-graphic" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            </svg>
+
+            <img id="nav-logo-image" src="" alt="Logo" 
+            style="display: none; height: 5em; width: auto; object-fit: contain; margin-bottom: 10px;">
+    
+        <div class="logo-text">
+            <span id="lbl-logo-main">Logo Main</span>
+            <span id="lbl-logo-sub">Logo Sub</span>
+        </div>
+        </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="./index.html" class="nav-link">Home</a></li>
+                    <li><a href="./about.html" class="nav-link">About</a></li>
+                    <li><a href="./services.html" class="nav-link">Services</a></li>
+                    <li><a href="./contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+
+        <main-section id="section-home">
+            <section class="hero-section" id="hero-bg-primary">
+            <div class="hero-bg-secondary" id="hero-bg-secondary"></div>
+
+            <div class="container" style="position: relative; z-index: 2;">
+                <div class="hero-content">
+                    
+                    <div class="hero-logo-box" style="display: flex !important; align-items: center !important; gap: 24px !important; background: rgba(15, 23, 42, 0.4) !important; backdrop-filter: blur(12px) !important; -webkit-backdrop-filter: blur(12px) !important; padding: 16px 28px !important; border-radius: 50px !important; border: 1px solid rgba(255, 255, 255, 0.15) !important; width: fit-content !important; margin-bottom: 2rem !important; position: relative;">
+    
+            <!-- 🌟 Cleaned frame wrapper with the exact id targeted by the script -->
+            <div id="hero-logo-frame" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; overflow: visible !important;">
+                
+                <!-- 🌟 Cleaned image element. Sizing & positioning will be handled by the engine -->
+                <img id="hero-logo-image" src="logo.png" alt="Brand Emblem" 
+                    style="display: block !important; max-width: none !important; object-fit: contain; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); mix-blend-mode: multiply !important; z-index: 10;">
+            </div>
+
+            <div style="display: flex !important; flex-direction: column !important; text-align: left !important; line-height: 1.2 !important; white-space: nowrap !important; padding-right: 12px;">
+                <span id="lbl-hero-logo-main" style="font-family: 'Inter', sans-serif !important; font-size: 1.8rem !important; font-weight: 700 !important; color: #EADBC8 !important; text-transform: none !important; letter-spacing: -0.5px;">Hero Main</span>
+                <span id="lbl-hero-logo-sub" style="font-family: 'Inter', sans-serif !important; font-size: 1.05rem !important; font-weight: 500 !important; color: #FAF6F0 !important; text-transform: none !important; margin-top: 4px !important; opacity: 0.85;">Hero Sub</span>
+            </div>
+            </div>
+
+                    <h1 class="hero-title" id="lbl-hero-title">Title</h1>
+                    <p class="hero-desc" id="lbl-hero-desc">Desc</p>
+
+                    <div class="hero-actions">
+                        <a href="./services.html" class="btn btn-primary">Services</a>
+                        <a href="./contact.html" class="btn btn-secondary">Find Us</a>
+                    </div>
+                </div> 
+            </div> 
+            </section>
+
+            <section class="quick-highlights">
+                <div class="container">
+                    <div class="highlights-grid" id="container-highlights">
+                    </div>
+                </div>
+            </section>
+
+            <section class="reviews-section">
+                <div class="container text-center">
+                    <div class="google-summary-badge">
+                        <svg class="google-g-icon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335" /></svg>
+                        <span class="reviews-rating-stars">★★★★★</span>
+    
+                        <a href="#" id="link-google-reviews-home" target="_blank">
+                            <strong id="lbl-review-score">0.0 / 5.0 Rating</strong>
+                        </a>
+                    </div>
+                    <h2 class="section-title" id="lbl-review-title">Reviews</h2>
+
+                    <!-- 1. Explicitly setting this to 1.5rem cuts the massive CSS default gap in half -->
+                    <p class="section-subtitle" id="lbl-review-subtitle" style="margin-bottom: 1.5rem !important;">
+                        Discover authentic guest insights with our Google Reviews
+                    </p>
+
+                    <div class="section-google-summary" style="width: 100%; padding: 0 !important; text-align: center;">
+                        <div class="google-summary-board" style="margin: 0 auto 1.5rem auto !important; max-width: 1000px !important; width: 90% !important;">
+                            
+                            <!-- 2. Set top margin to 0 so it neatly catches the 1.5rem drop from the line above -->
+                            <p class="section-subtitle" id="lbl-summary-board-text" style="margin-top: 0 !important; margin-bottom: 1.5rem !important;">
+                                For a quick overview of our most common visitor buzzwords we provide a Summary Board
+                            </p>
+                            
+                            <img src="./images/GoogleReviews_SummaryBoard.png" alt="Google Review Summary Board of Copperwheats Coffee Shop in Brodick" 
+                                style="display: block !important; width: 100% !important; height: auto !important; border-radius: 12px !important; box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important; object-fit: cover !important;">
+                        </div>
+                    </div>
+                    
+                    <div class="reviews-grid" id="container-reviews">
+                    </div>
+
+                    <div id="wrapper-reviews-home" style="margin-top: 3rem; text-align: center;">
+                        <a href="#" id="btn-google-review-home" class="btn btn-secondary" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                            ⭐ Quickly review on Google
+                        </a>
+                        <a href="#" id="btn-tripadvisor-review-home" class="btn btn-secondary" target="_blank" style="margin-top: 0.5rem; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; max-width: 220px; margin-left: auto; margin-right: auto; background-color: #34E0A1; border-color: #34E0A1; color: #000000;">
+                        🦉 Leave a TripAdvisor Review
+                    </a>
+                    </div>
+                </div>
+            </section>
+        </main-section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4 id="lbl-footer-name">Name</h4>
+                    <p id="lbl-footer-tagline">Tagline</p>
+                </div>
+                <div class="footer-meta">
+                    <p>Designed for your journey.</p>
+                    <p>Enquiries: <a href="#" id="lbl-footer-email-link">Email</a></p>
+                </div>
+            </div>
+            <div class="copyright" id="lbl-footer-copyright">&copy; Copyright</div>
+        </div>
+    </footer>
+
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
