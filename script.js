@@ -564,7 +564,9 @@ function hydrateTemplateEngine(config) {
     }
 
     const lblFooterCopyright = document.getElementById('lbl-footer-copyright');
-    if (lblFooterCopyright) lblFooterCopyright.innerHTML = `&copy; 2026 ${config.businessName} ${config.businessSub}. All Rights Reserved. Built by Largs Web Design.`;
+    if (lblFooterCopyright) {
+        lblFooterCopyright.innerHTML = `&copy; 2026 ${config.businessName} ${config.businessSub}. All Rights Reserved. Built by <a href="https://www.largswebdesign.co.uk" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">Largs Web Design</a>.`;   
+    }
 
     // FAQ Grid Loop Accordions
     const faqTitle = document.getElementById('faq-title');
