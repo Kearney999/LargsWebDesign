@@ -14,6 +14,7 @@ export const siteConfig = {
     customLogoUrl: "logo.png",
     businessName: "Largs Web Design",
     businessSub: "Design at the heart of Scotland",
+    businessType: "LocalBusiness",
     metaTitle: "Largs Website Design | High-End justifiable Websites for Local Businesses",
     contactEmail: "Kearney999@gmail.com",
 	contactEmailEncrypted: "4d2463d2c6d63e7e6405d18b973cb08c",
@@ -110,6 +111,11 @@ export const siteConfig = {
                 desc: "Over 60% of Ayrshire customers look for services on their phones. Our responsive layouts look flawless and load instantly on every single screen." 
             },
             { 
+                icon: "award", 
+                title: "26 Years of Engineering Insights", 
+                desc: "Get institutional-grade expertise scaling systems across multiple industries, translated perfectly into high-performance web solutions for your business." 
+            },
+            { 
                 icon: "trendingUp", 
                 title: "Results & Revenue Focused", 
                 desc: "A great business website shouldn't just look pretty—it needs to convert traffic into real sales, bookings, and enquiries. We design with your bottom line in mind." 
@@ -121,14 +127,11 @@ export const siteConfig = {
             },
             { 
                 icon: "mapPin", 
-                title: "100% Largs Local Support", 
+                title: "100% face to face Support", 
                 desc: "Proudly operating right here on the Clyde coast. No call centers or automated helplines—just quick, direct support from your local tech partner." 
-            },
-            { 
-                icon: "award", 
-                title: "26 Years of Engineering Insights", 
-                desc: "Get institutional-grade expertise scaling systems across multiple industries, translated perfectly into high-performance web solutions for your business." 
             }
+           
+            
         ],
         reviewsHeadline: "What Local Businesses Say",
         reviewsSub: "We help independent hospitality, retail, and service providers upgrade their web presence to maximize local revenue.",
@@ -142,10 +145,11 @@ export const siteConfig = {
     },
     aboutPage: {
         title: "Our Mission",
-        subtitle: "Bringing premium web design to independent local brands at prices that make sense.",
+        subtitle: "Bringing premium web design to independent local brands at prices that are justifiable for small business.",
         storyParagraphs: [
-            "In the digital age, a business's website is its front window. Yet, so many incredible hotels, B&Bs, and local shops in Largs are held back by slow, outdated, or non-mobile-friendly websites that actively drive customers away.",
-            "Largs Website Design was founded to solve this exact problem. We build bulletproof, stunning, data-driven single-page systems that load instantly, secure guest trust, and maximize direct sales without the steep technical 'hot air' overheads."
+            "In the digital age, a business's website is its front window to the world. Yet, so many businesses in Largs are held back by no online presence at all due to cost, or slow, outdated, or non-mobile-friendly websites that actively drive customers away, and leave a negative impression.",
+            "Largs Web Design have focussed on what really matters to small business, removing those non value added technical aspects to a web site we know aren't really needed to your requirements, and focussing on ensuring you have a professional online presence that have the speed requirements and google rankings to match. All other techical overheads are removed to make it more cost effective and justifiable to you.",
+            "I branched into Web Development and Digital Marketing back in the 2010s in the local area, but had to give it up after being approached by a software company in Glasgow. It was impossible to maintain both, especially with travelling, but its always annoyed me how much web developers charge, and what they say you need, when you don't. So, after consideration, I have decided to return to my love, providing my inside knowledge to the small businesses locally that deserve it."
         ],
         features: [
             { emoji: "⚡", title: "Blazing Fast Performance", desc: "We removed those unnecessary features for your business meaning the site loads in milliseconds." },
