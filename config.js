@@ -17,7 +17,7 @@ export const siteConfig = {
     businessType: "LocalBusiness",
     metaTitle: "Largs Website Design | High-End justifiable Websites for Local Businesses",
     contactEmail: "Kearney999@gmail.com",
-	contactEmailEncrypted: "4d2463d2c6d63e7e6405d18b973cb08c",
+	contactEmailEncrypted: "9cb95059765cce543918ced446e22868",
     locationShort: "Largs, Ayrshire",
     locationFull: "Largs, North Ayrshire, Scotland",
     themeColors: {
