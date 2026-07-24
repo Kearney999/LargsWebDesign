@@ -164,16 +164,16 @@ export const siteConfig = {
 		openingHours: {
 
         title: "Opening Times",
-        subtitle: "Give us a call, and we can discuss things further, free of charge",
+        subtitle: "We have changes our working day to allow people to call outside business hours, allowing you to prioritise your customer calls, if needed. Give us a call to discuss.",
         // Or for a different client: "Our Operating Hours", "Drop by our showroom", etc.
         
-        monday: "12:30 AM – 9:30 PM",
-        tuesday: "12:30 AM – 9:30 PM",
-        wednesday: "12:30 AM – 9:30 PM",
-        thursday: "12:30 AM – 9:30 PM",
-        friday: "12:30 AM – 9:30 PM",
-        saturday: "12:30 AM – 9:30 PM",
-        sunday: "12:30 AM – 9:30 PM"
+        monday: "1:00 PM – 9:30 PM",
+        tuesday: "1:00 PM – 9:30 PM",
+        wednesday: "1:00 PM – 9:30 PM",
+        thursday: "1:00 PM – 9:30 PM",
+        friday: "1:00 PM – 9:30 PM",
+        saturday: "1:00 PM – 9:30 PM",
+        sunday: "1:00 PM – 9:30 PM"
         },
 		
 		
