@@ -477,7 +477,7 @@ function hydrateTemplateEngine(config) {
     // Contact Form AJAX Handler Setup
     const contactForm = document.getElementById('contact-form-submit');
     if (contactForm) {
-        contactForm.setAttribute('action', `https://formsubmit.co/ajax/${config.contactEmailEncrypted}`);
+        contactForm.setAttribute('action', `https://formsubmit.co/ajax/${config.contactEmail}`);
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault(); 
             const submitBtn = document.getElementById('form-submit-btn');
