@@ -14,8 +14,9 @@ export const siteConfig = {
     customLogoUrl: "logo.png",
     businessName: "Largs Web Design",
     businessSub: "Design at the heart of Scotland",
+    siteUrl: "https://largswebdesign.co.uk", // Canonical business homepage URL
     businessType: "LocalBusiness",
-    metaTitle: "Largs Website Design | High-End justifiable Websites for Local Businesses",
+    metaTitle: "Largs Website Design | Justifiable Websites for Local Businesses",
     contactEmail: "Kearney999@gmail.com",
 	contactEmailEncrypted: "9cb95059765cce543918ced446e22868",
     locationShort: "Largs, Ayrshire",
@@ -164,7 +165,7 @@ export const siteConfig = {
 		openingHours: {
 
         title: "Opening Times",
-        subtitle: "We have changes our working day to allow people to call outside business hours, allowing you to prioritise your customer calls, if needed. Give us a call to discuss.",
+        subtitle: "We have changed our working day to allow people to call outside business hours, allowing you to prioritise your customer calls, if needed. Give us a call to discuss.",
         // Or for a different client: "Our Operating Hours", "Drop by our showroom", etc.
         
         monday: "1:00 PM – 9:30 PM",

@@ -19,7 +19,7 @@ function populateSchemaSEO(config) {
         "@type": config.businessType || "LocalBusiness",
         "name": config.businessName || "Copperwheats",
         "description": config.homePage?.heroDesc || "Specialty coffee house.",
-        "url": window.location.href,
+        "url": config.siteUrl || window.location.origin, //SKSK25/07/26 REPLACED "url": window.location.href,
         "telephone": cp.contactTelephone || "",
         "image": cp.featuredImage || "",
         "servesCuisine": cp.servesCuisine || "Coffee, Cafe",
@@ -52,9 +52,13 @@ function populateSchemaSEO(config) {
             const cleanTime = (t) => {
                 let [time, modifier] = t.trim().split(" ");
                 let [hours, minutes] = time.split(":");
-                if (modifier === "PM" && hours !== "12") hours = parseInt(hours, 10) + 12;
-                if (modifier === "AM" && hours === "12") hours = "00";
-                return `${String(hours).padStart(2, '0')}:${minutes}`;
+
+                let h = parseInt(hours, 10);
+
+                if (modifier === "PM" && h !== 12) h += 12;
+                if (modifier === "AM" && h === 12) h = 0;
+
+                return `${String(h).padStart(2, '0')}:${minutes}`;
             };
             try {
                 opens = cleanTime(times[0]);
