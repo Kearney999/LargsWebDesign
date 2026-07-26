@@ -62,8 +62,8 @@ export const siteConfig = {
 	
     heroSlides: [
         {
-            imgUrl: "https://images.unsplash.com/photo-1575663620136-5ebbfcc2c597?w=1600&fit=crop&q=80",
-            title: "Websites are your modern shop window",
+            imgUrl: "https://images.unsplash.com/photo-1678690832871-8b9993c76aa8?w=1600&fit=crop&q=80",
+            title: "Websites at justifiable prices for small business",
             desc: "Give every visitor a polished brochure to your products and services."
         },
         {
@@ -72,9 +72,9 @@ export const siteConfig = {
             desc: "We transform slow, outdated layouts into polished, lightning-fast modern internet experiences."
         },
         {
-            imgUrl: "https://images.unsplash.com/photo-1657727534668-4104c475b292?w=1600&fit=crop&q=80",
+            imgUrl: "https://images.unsplash.com/photo-1675352161828-c07170f1b114?w=1600&fit=crop&q=80",
             title: "Dominate Local Google Search",
-            desc: "An incredible website is useless if no one can find it. We get you visible."
+            desc: "Enhance your reach by getting your website top page for your business specialisation."
         },
         {
             imgUrl: "https://images.unsplash.com/photo-1703720074944-b60b730c7289?w=1600&fit=crop&q=80",
