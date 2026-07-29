@@ -77,8 +77,8 @@ export const siteConfig = {
             desc: "Enhance your reach by getting your website top page for your business specialisation."
         },
         {
-            imgUrl: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=1600&fit=crop&q=80",
-            title: "Logo Design",
+            imgUrl: "./images/GraphicDesignedLogos.png",
+            title: "Personalised Logo Design",
             desc: "There are three responses to design, yes, no and WOW! Our preference is the latter."
         },
         {
