@@ -14,7 +14,10 @@
         const statusDiv = document.getElementById('status');
         try {
           const res = await fetch(API_URL, {
-            headers: { Authorization: `token ${GITHUB_TOKEN}` }
+            headers: {
+              'Authorization': `Bearer ${GITHUB_TOKEN}`,
+              'Accept': 'application/vnd.github.v3+json'
+            }
           });
           const data = await res.json();
           fileSha = data.sha;
