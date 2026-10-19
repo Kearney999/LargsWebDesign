@@ -13,21 +13,34 @@
       async function loadCurrentConfig() {
         const statusDiv = document.getElementById('status');
         try {
+          // 1. Try GitHub API first
           const res = await fetch(API_URL, {
             headers: {
               'Authorization': `Bearer ${GITHUB_TOKEN}`,
               'Accept': 'application/vnd.github.v3+json'
             }
           });
-          const data = await res.json();
-          fileSha = data.sha;
 
-          const decodedContent = decodeURIComponent(escape(atob(data.content)));
-          currentConfig = JSON.parse(decodedContent);
+          if (res.ok) {
+            const data = await res.json();
+            fileSha = data.sha;
+            const decodedContent = decodeURIComponent(escape(atob(data.content)));
+            currentConfig = JSON.parse(decodedContent);
+            if (statusDiv) statusDiv.innerText = '';
+          } else {
+            // 2. Fallback: Load from local public folder if GitHub 401/404s
+            console.warn('GitHub API failed, loading local config fallback...');
+            const localRes = await fetch('/ThreeReasons/config_ThreeReasons_Hub.json');
+            if (!localRes.ok) throw new Error('Local config file not found');
+            currentConfig = await localRes.json();
+            if (statusDiv) statusDiv.innerText = '⚠️ Connected via local fallback (GitHub auth needed for saving)';
+            statusDiv.style.color = 'orange';
+          }
 
           renderFormFields(currentConfig);
         } catch (err) {
-          if (statusDiv) statusDiv.innerText = '❌ Failed to load configuration.';
+          console.error('Config Load Error:', err);
+          if (statusDiv) statusDiv.innerText = '❌ Failed to load configuration entirely.';
         }
       }
 

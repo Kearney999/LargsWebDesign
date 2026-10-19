@@ -21,7 +21,7 @@
                 "description": "Full food, dessert, and drinks selection.",
                 "buttonText": "Table Menu",
                 "link": "/ThreeReasons/tableMenu",
-                "show": true
+                "show": false
             },
             {
                 "icon": "🍽️",
@@ -41,9 +41,9 @@
             },
             {
                 "icon": "🔎",
-                "title": "Searchable Menu",
-                "description": "Search for any ingredient or meal, and shortlist your favourite dishes.",
-                "buttonText": "Serachable Menu",
+                "title": "Menu",
+                "description": "Search for any ingredient or meal, show Vegatarian or Gluten Free options only, and shortlist your favourite dishes.",
+                "buttonText": "Menu",
                 "link": "/ThreeReasons/hybridMenu_Searchable",
                 "show": true
             },
