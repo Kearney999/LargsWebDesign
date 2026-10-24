@@ -1,8 +1,28 @@
 // netlify/functions/update-menu.js
 export async function handler(event, context) {
+  // 1. Define standard CORS headers
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+  };
+
+  // 2. Handle browser preflight OPTIONS requests immediately
+  if (event.httpMethod === 'OPTIONS') {
+    return {
+      statusCode: 200,
+      headers,
+      body: JSON.stringify({ message: 'Successful preflight' })
+    };
+  }
+
   // Only allow POST requests
   if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' };
+    return { 
+      statusCode: 405, 
+      headers, 
+      body: JSON.stringify({ error: 'Method Not Allowed' }) 
+    };
   }
 
   try {
@@ -11,7 +31,11 @@ export async function handler(event, context) {
 
     // 1. Verify PIN
     if (pin !== ADMIN_PIN) {
-      return { statusCode: 401, body: JSON.stringify({ error: 'Incorrect PIN' }) };
+      return { 
+        statusCode: 401, 
+        headers, 
+        body: JSON.stringify({ error: 'Incorrect PIN' }) 
+      };
     }
 
     const token = process.env.GITHUB_TOKEN;
@@ -65,12 +89,14 @@ export async function handler(event, context) {
 
     return {
       statusCode: 200,
+      headers,
       body: JSON.stringify({ success: true })
     };
 
   } catch (err) {
     return {
       statusCode: 500,
+      headers,
       body: JSON.stringify({ error: err.message })
     };
   }
