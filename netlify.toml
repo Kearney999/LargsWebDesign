@@ -1,3 +1,4 @@
 [build]
-  command = "# no build command needed for functions"
+  command = "echo 'Functions only'"
+  publish = "hub3Reasons"
   functions = "netlify/functions"
