@@ -48,7 +48,7 @@
           {
             "icon": "🥣",
             "title": "Soup of the Day",
-            "description": "Carrot and Corriander with crusty Sourdough bread",
+            "description": "Tomato and Basil",
             "show": true
           },
           {
@@ -266,7 +266,7 @@
     {
       "id": "traditional-homemade-soup-of-the-day",
       "title": "Traditional Homemade Soup Of The Day",
-      "description": "Carrot and Corriander with crusty Sourdough bread",
+      "description": "Tomato and Basil",
       "category": "Starters",
       "smallPrice": null,
       "largePrice": "4.50",
