@@ -54,7 +54,7 @@ export async function handler(event, context) {
         items: (cat.items || []).map(item => {
         const titleLower = (item.title || '').toLowerCase();
         // Matches "soup of the day" regardless of apostrophe style or exact icon unicode
-        if (titleLower.includes('soup of the day') || item.icon === '🥣') {
+        if (titleLower.includes('soup of the day')) {
             return { ...item, description: soupDescription };
         }
         return item;
