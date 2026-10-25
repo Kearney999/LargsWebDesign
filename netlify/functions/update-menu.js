@@ -48,16 +48,18 @@ export async function handler(event, context) {
 
     // 2. Update Customer Hub Soup Widget description
     const updatedCustomerHub = {
-      ...existingContentJson.CustomerHub,
-      categories: existingContentJson.CustomerHub.categories.map(cat => ({
+    ...existingContentJson.CustomerHub,
+    categories: (existingContentJson.CustomerHub?.categories || []).map(cat => ({
         ...cat,
-        items: cat.items.map(item => {
-          if (item.icon === "🥣" || item.title === "Soup of the Day") {
+        items: (cat.items || []).map(item => {
+        const titleLower = (item.title || '').toLowerCase();
+        // Matches "soup of the day" regardless of apostrophe style or exact icon unicode
+        if (titleLower.includes('soup of the day') || item.icon === '🥣') {
             return { ...item, description: soupDescription };
-          }
-          return item;
+        }
+        return item;
         })
-      }))
+    }))
     };
 
     // 3. Update Starters Menu Item description
