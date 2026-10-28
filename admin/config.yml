@@ -1,5 +1,3 @@
-# Enable local backend mode when testing on localhost
-local_backend: true
 
 # Production backend setting via Netlify Git Gateway
 backend:
