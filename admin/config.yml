@@ -4,8 +4,7 @@ backend:
   name: github
   repo: Kearney999/LargsWebDesign
   branch: main
-  auth_scope: repo
-  site_id: a7afd351-ae15-44d3-92b9-bd05ff38d78f
+  site_domain: copperwheat.netlify.app
 
 # Directory where uploaded images (e.g. specials board photos) will be saved
 media_folder: "images/specials"
