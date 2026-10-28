@@ -1,0 +1,82 @@
+# Enable local backend mode when testing on localhost
+local_backend: true
+
+# Production backend setting via Netlify Git Gateway
+backend:
+  name: github
+  repo: Kearney999/LargsWebDesign
+  branch: main
+  auth_scope: repo
+  
+# Directory where uploaded images (e.g. specials board photos) will be saved
+media_folder: "images/specials"
+public_folder: "/images/specials"
+
+collections:
+  - name: "site_configuration"
+    label: "Site Configurations"
+    files:
+      - file: "public/ThreeReasons/config_ThreeReasons_Hub.json"
+        label: "The Three Reasons Config"
+        name: "three_reasons_hub"
+        fields:
+          # --- MENU SETTINGS & GENERAL NOTICES ---
+          - name: "MenuSettings"
+            label: "Menu Settings & General Notices"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - { label: "Show Menu Photos", name: "showMenuPhotos", widget: "boolean", default: false }
+              - name: "GeneralNotes"
+                label: "General Notices"
+                widget: "list"
+                field: { label: "Notice Text", name: "notice", widget: "text" }
+
+          # --- CUSTOMER HUB (Includes Soup of the Day & Specials Board) ---
+          - name: "CustomerHub"
+            label: "Customer Hub Settings"
+            widget: "object"
+            fields:
+              - { label: "Hub Title", name: "title", widget: "string" }
+              - { label: "Hub Subtitle", name: "subtitle", widget: "text" }
+              - name: "categories"
+                label: "Hub Categories"
+                widget: "list"
+                fields:
+                  - { label: "Category Name", name: "name", widget: "string" }
+                  - name: "items"
+                    label: "Hub Action Cards / Items"
+                    widget: "list"
+                    fields:
+                      - { label: "Icon Emoji", name: "icon", widget: "string", required: false }
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Description", name: "description", widget: "text" }
+                      - { label: "Button Text", name: "buttonText", widget: "string", required: false }
+                      - { label: "Link", name: "link", widget: "string", required: false }
+                      - { label: "Show Item", name: "show", widget: "boolean", default: true }
+
+          # --- MENU CATEGORIES ---
+          - name: "Categories"
+            label: "Menu Categories List"
+            widget: "list"
+            fields:
+              - { label: "Category Name", name: "name", widget: "string" }
+              - { label: "Subtitle Note", name: "subtitle", widget: "string", required: false }
+              - { label: "Footnote", name: "footnote", widget: "string", required: false }
+
+          # --- MENU ITEMS ---
+          - name: "MenuItems"
+            label: "Full Food & Drink Menu Items"
+            widget: "list"
+            fields:
+              - { label: "Item ID (unique slug)", name: "id", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Large Price (£)", name: "largePrice", widget: "string", required: false }
+              - { label: "Small Price (£)", name: "smallPrice", widget: "string", required: false }
+              - { label: "Gluten Free (GF)", name: "isGF", widget: "boolean", default: false }
+              - { label: "Vegetarian (V)", name: "isV", widget: "boolean", default: false }
+              - { label: "Highlighted Dish", name: "isHighlighted", widget: "boolean", default: false }
+              - { label: "Image (Select / Upload)", name: "image", widget: "image", required: false }
