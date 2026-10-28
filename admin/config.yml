@@ -4,7 +4,7 @@ backend:
   name: github
   repo: Kearney999/LargsWebDesign
   branch: main
-  site_domain: copperwheat.netlify.app
+  site_domain: www.largswebdesign.co.uk
 
 # Directory where uploaded images (e.g. specials board photos) will be saved
 media_folder: "images/specials"
