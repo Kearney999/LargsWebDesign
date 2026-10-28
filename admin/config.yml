@@ -8,6 +8,8 @@ backend:
   branch: main
   auth_scope: repo
   site_id: a7afd351-ae15-44d3-92b9-bd05ff38d78f
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
 
 # Directory where uploaded images (e.g. specials board photos) will be saved
 media_folder: "images/specials"
