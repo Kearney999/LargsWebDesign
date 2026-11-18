@@ -11,6 +11,8 @@
       try {
         // Fetch config live with a timestamp query param to prevent browser caching old JSON
         const res = await fetch(`/ThreeReasons/config_ThreeReasons_Hub.json?t=${Date.now()}`);
+        // const res = await fetch(`/NewJade/config_NewJade_Hub.json?t=${Date.now()}`);
+
         if (!res.ok) throw new Error('Failed to load configuration JSON');
         siteConfig = await res.json();
 
