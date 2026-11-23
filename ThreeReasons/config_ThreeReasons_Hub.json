@@ -577,15 +577,15 @@
       "category": "The Deli"
     },
     {
-      "smallPrice": "5.95",
+      "smallPrice": null,
       "isHighlighted": false,
       "isGF": false,
       "isV": true,
-      "largePrice": "7.75",
-      "title": "Kids Meal Deal (Main, Side, Drink & Ice Cream)",
-      "id": "kids-meal-deal",
+      "largePrice": "5.95",
+      "title": "Kids Menu",
+      "id": "kids-menu",
       "image": "",
-      "description": "Choose your main from: Chicken Goujons, Pasta Bolognese, Pork Sausages, Burger, Cod Fillet Fingers, Cheeseburger, or Macaroni Cheese. Then choose from: Salad/Vegetables or Beans, and either Chips, Potatoes or Garlic Bread. Robinsons Diluting Juice (£0.95) & Kids Ice Cream with Sauce (£2.25) — Main £5.95 or all three for £7.75. Available only for 14 years and under.",
+      "description": "Choose your MAIN: Chicken Goujons, Pasta Bolognese, Pork Sausages, Burger, Cod Fillet Fingers, Cheeseburger, or Macaroni Cheese. Then Choose your SIDE: Salad, Vegetables or Beans, And EITHER : Chips, Potatoes or Garlic Bread.",
       "category": "Kids Menu"
     },
     {
@@ -832,6 +832,15 @@
   "MenuSettings": {
     "title": "Our Three Reasons Digital Menu",
     "subtitle": "Search for your favourite ingredients, meals, or desserts. Or filter by category.",
+    "tier": 2,
+    "telephone": "01475 672330",
+    "website": "https://www.thethreereasons.co.uk",
+    "orderUrl": "https://order.example.com",
+    "openingHours": [
+      "Mon–Sat: 11:00 – 19:00",
+      "Sun: 12:30 – 19:00"
+    ],
+
     "GeneralNotes": [
       "Gluten Free Freedom (GF) - Please note, dishes marked GF can be made gluten free on request only.",
       "Vegetarian (V) - Please make us aware of any special dietary requirements and we will do our best to assist you.",
@@ -1043,8 +1052,22 @@
             "icon": "🚕",
             "title": "Call a taxi",
             "description": "Taxi!, Find our very trusted and preferred taxi services. One button ring!",
-            "buttonText": "Brisbane Taxis",
-            "link": "tel:01475687171",
+
+            "Taxis": [
+            {
+              "name": "SK Taxis",
+              "phone": "07855 731298",
+              "note": "Three Reasons customers only"
+            },
+            {
+              "name": "The Three Reasons Cabs",
+              "phone": "01475 672330",
+              "note": "We'll pick you up!"
+            }
+          ],
+
+            "buttonText": "Taxis",
+            "link": "#taxi-modal",
             "show": true
           },
           {
@@ -1089,14 +1112,15 @@
     },
     {
       "name": "Kids Menu",
-      "subtitle": "Main £5.95 or all three for £7.75. Please note kids meals are available only for 14 years and under."
+      "subtitle": "Please note kids meals are available only for 14 years and under.",
+      "footnote": "Robinson's diluting juice (£0.95), Kid's ice cream with sauce (£2.25). All three for £7.75."
     },
     {
       "name": "Sides"
     },
     {
-      "name": "Desserts",
-      "subtitle": "1 Scoop £2.85 | Additional scoops £2.00 | Sauce or marshmallows £1.00"
+      "name": "Desserts"
+      
     }
   ]
 }

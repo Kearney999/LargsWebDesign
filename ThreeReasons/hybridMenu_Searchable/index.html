@@ -1,6 +1,7 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title id="pageTitle">Loading Menu... | Business Name</title><link rel="stylesheet" href="/_astro/hybridMenu_Searchable.DUH5pv1K.css"></head><body><div class="menu-container"><div class="top-nav"><a href="/hub3Reasons/" class="back-btn">← Customer Hub</a></div><div class="header-banner"><h1 id="bannerTitle">Loading...</h1><p id="bannerSubtitle">Please wait while the menu loads.</p></div><!-- Generic Notes Section --><div class="generic-notes-container" id="genericNotesContainer"></div><!-- Search & Quick Filter Bar --><div class="search-section"><div class="search-wrapper"><input type="text" id="searchInput" placeholder="Search menu..." class="search-input"><button type="button" id="clearSearchBtn" class="clear-search-btn" aria-label="Clear search">✕</button></div><div class="dietary-toggles"><button type="button" class="badge-filter-btn" data-badge="GF">GF Only</button><button type="button" class="badge-filter-btn" data-badge="V">V Only</button></div></div><!-- Category Slider Pills --><nav class="category-hero-slider" id="categorySlider"><button class="category-pill active" data-category="All">All</button><button class="category-pill fav-pill" data-category="Favourites">Favourites ❤️ <span id="favCount">0</span></button></nav><!-- Category Blocks Container --><div id="menuContentArea"><div style="text-align: center; padding: 40px; color: #666;">Loading menu items...</div></div><!-- Dynamic Empty State --><div id="emptyState" class="empty-state" style="display: none;"><span id="emptyIcon" class="empty-icon">🔍</span><h3 id="emptyTitle">No items found</h3><p id="emptyStateText">No dishes match your current filter criteria.</p></div></div><!-- Image Modal Dialog --><dialog id="dishModal" class="dish-modal"><div class="modal-container"><button type="button" id="closeModal" class="close-btn">&times;</button><img id="modalImage" class="modal-img" src="" alt="Dish Preview"><div id="modalCaption" class="modal-caption"></div></div></dialog><!-- Runtime Client-Side Hydration Script --><script>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title id="pageTitle">Loading Menu... | Business Name</title><link rel="stylesheet" href="/_astro/hybridMenu_Searchable.CZ6Cj3U0.css"></head><body><div class="menu-container"><div class="top-nav"><a href="/hub3Reasons/" class="back-btn">← Customer Hub</a></div><div class="header-banner"><h1 id="bannerTitle">Loading...</h1><p id="bannerSubtitle">Please wait while the menu loads.</p></div><!-- Generic Notes Section --><div class="generic-notes-container" id="genericNotesContainer"></div><!-- Search & Quick Filter Bar --><div class="search-section"><div class="search-wrapper"><input type="text" id="searchInput" placeholder="Search menu..." class="search-input"><button type="button" id="clearSearchBtn" class="clear-search-btn" aria-label="Clear search">✕</button></div><div class="dietary-toggles"><button type="button" class="badge-filter-btn" data-badge="GF">GF Only</button><button type="button" class="badge-filter-btn" data-badge="V">V Only</button></div></div><!-- Category Slider Pills --><nav class="category-hero-slider" id="categorySlider"><button class="category-pill active" data-category="All">All</button><button class="category-pill fav-pill" data-category="Favourites">Favourites ❤️ <span id="favCount">0</span></button></nav><!-- Category Blocks Container --><div id="menuContentArea"><div style="text-align: center; padding: 40px; color: #666;">Loading menu items...</div></div><!-- Dynamic Empty State --><div id="emptyState" class="empty-state" style="display: none;"><span id="emptyIcon" class="empty-icon">🔍</span><h3 id="emptyTitle">No items found</h3><p id="emptyStateText">No dishes match your current filter criteria.</p></div></div><!-- Image Modal Dialog --><dialog id="dishModal" class="dish-modal"><div class="modal-container"><button type="button" id="closeModal" class="close-btn">&times;</button><img id="modalImage" class="modal-img" src="" alt="Dish Preview"><div id="modalCaption" class="modal-caption"></div></div></dialog><!-- Runtime Client-Side Hydration Script --><script>
     let siteConfig = {};
-    let activeCategory = 'All';
+    let activeCategories = new Set();
+    let isFavouritesMode = false;
     let activeGF = false;
     let activeV = false;
     let favourites = JSON.parse(localStorage.getItem('menu_favourites') || '[]');
@@ -68,15 +69,17 @@
       const extractedCategoryNames = [...new Set(menuItems.map(item => item.category))];
       const categories = categoryConfigs.length > 0 ? categoryConfigs : extractedCategoryNames.map(name => ({ name, subtitle: "", footnote: "" }));
 
-      // Render Category Slider Pills
+      // Render Category Slider Pills with item counts
       const slider = document.getElementById('categorySlider');
       const pillHTML = categories.map(catConfig => {
         const catName = typeof catConfig === 'string' ? catConfig : catConfig.name;
-        return `<button class="category-pill" data-category="${catName}">${catName}</button>`;
+        const count = menuItems.filter(item => item.category === catName).length;
+        return `<button type="button" class="category-pill" data-category="${catName}">${catName} (${count})</button>`;
       }).join('');
+
       slider.innerHTML = `
-        <button class="category-pill active" data-category="All">All</button>
-        <button class="category-pill fav-pill" data-category="Favourites">
+        <button type="button" class="category-pill active" data-category="All">All (${menuItems.length})</button>
+        <button type="button" class="category-pill fav-pill" data-category="Favourites">
           Favourites ❤️ <span id="favCount">${favourites.length}</span>
         </button>
         ${pillHTML}
@@ -96,6 +99,7 @@
           <div class="category-block" data-category-section="${categoryName}">
             <div class="category-header">
               <h2 class="category-title">${categoryName}</h2>
+              
               <div class="wavy-divider"></div>
               ${subtitle ? `<p class="category-subtitle-text">${subtitle}</p>` : ''}
               ${hasDualPrices ? `<div class="category-price-subheader"><span>Small / Reg</span></div>` : ''}
@@ -175,10 +179,53 @@
       }
 
       categoryBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          categoryBtns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          activeCategory = btn.getAttribute('data-category');
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const val = (btn.getAttribute('data-category') || '').trim();
+          const allBtn = document.querySelector('#categorySlider .category-pill[data-category="All"]');
+          const favBtn = document.querySelector('#categorySlider .category-pill[data-category="Favourites"]');
+
+          // 1. Toggle "Favourites" mode
+          if (val === 'Favourites') {
+            isFavouritesMode = !isFavouritesMode;
+            activeCategories.clear();
+            categoryBtns.forEach(b => b.classList.remove('active'));
+
+            if (isFavouritesMode) {
+              btn.classList.add('active');
+            } else if (allBtn) {
+              allBtn.classList.add('active');
+            }
+            filterMenu();
+            return;
+          }
+
+          // 2. Clear Favourites mode when selecting normal categories
+          isFavouritesMode = false;
+          if (favBtn) favBtn.classList.remove('active');
+
+          // 3. Handle "All" vs. Multi-Select Category Toggles
+          if (val === 'All') {
+            activeCategories.clear();
+            categoryBtns.forEach(b => b.classList.remove('active'));
+            if (allBtn) allBtn.classList.add('active');
+          } else {
+            if (allBtn) allBtn.classList.remove('active');
+
+            if (activeCategories.has(val)) {
+              activeCategories.delete(val);
+              btn.classList.remove('active');
+            } else {
+              activeCategories.add(val);
+              btn.classList.add('active');
+            }
+
+            // Fall back to "All" if the user deselects every active category
+            if (activeCategories.size === 0 && allBtn) {
+              allBtn.classList.add('active');
+            }
+          }
+
           filterMenu();
         });
       });
@@ -263,9 +310,20 @@
       let totalVisible = 0;
 
       document.querySelectorAll('.category-block').forEach(section => {
-        const catName = section.getAttribute('data-category-section');
+        const catName = (section.getAttribute('data-category-section') || '').trim();
         const itemsInCategory = section.querySelectorAll('.menu-item');
         let sectionVisibleCount = 0;
+
+        const matchesCategoryPill =
+          isFavouritesMode ||
+          activeCategories.size === 0 ||
+          activeCategories.has('All') ||
+          activeCategories.has(catName);
+
+        if (!matchesCategoryPill) {
+          section.style.display = 'none';
+          return;
+        }
 
         itemsInCategory.forEach(item => {
           const id = item.getAttribute('data-id');
@@ -275,12 +333,12 @@
           const isV = item.getAttribute('data-v') === 'true';
           const isFav = favourites.includes(id);
 
-          let matchesCategory = activeCategory === 'All' ? true : activeCategory === 'Favourites' ? isFav : catName === activeCategory;
-          let matchesSearch = !query || title.includes(query) || desc.includes(query);
-          let matchesGF = !activeGF || isGF;
-          let matchesV = !activeV || isV;
+          const matchesSearch = !query || title.includes(query) || desc.includes(query);
+          const matchesGF = !activeGF || isGF;
+          const matchesV = !activeV || isV;
+          const matchesFav = !isFavouritesMode || isFav;
 
-          if (matchesCategory && matchesSearch && matchesGF && matchesV) {
+          if (matchesSearch && matchesGF && matchesV && matchesFav) {
             item.style.display = 'block';
             sectionVisibleCount++;
             totalVisible++;
@@ -296,7 +354,7 @@
       if (emptyState) {
         if (totalVisible === 0) {
           emptyState.style.display = 'block';
-          if (activeCategory === 'Favourites') {
+          if (isFavouritesMode) {
             document.getElementById('emptyIcon').textContent = '❤️';
             document.getElementById('emptyTitle').textContent = 'No Favourites Saved';
             document.getElementById('emptyStateText').textContent = "You haven't saved any favourites yet! Tap the ❤️ on any dish to shortlist it here.";
@@ -313,4 +371,57 @@
 
     // Run on page load
     initLiveMenu();
-  </script></body></html>
+  </script><div id="floating-contact-wrapper" class="floating-contact-wrapper" data-astro-cid-emwdcask><!-- Expandable Opening Hours Card --><div id="opening-hours-popover" class="hours-popover" hidden data-astro-cid-emwdcask><div class="hours-header" data-astro-cid-emwdcask><strong data-astro-cid-emwdcask>Opening Hours</strong><button type="button" id="close-hours-btn" aria-label="Close hours" data-astro-cid-emwdcask>✕</button></div><ul class="hours-list" data-astro-cid-emwdcask><li data-astro-cid-emwdcask>Mon–Sat: 11:00 – 19:00</li><li data-astro-cid-emwdcask>Sun: 12:30 – 19:00</li></ul></div><!-- Sub-buttons Stack (only non-empty fields render) --><div id="floating-sub-actions" class="floating-sub-actions" aria-hidden="true" data-astro-cid-emwdcask><a href="https://order.example.com" target="_blank" rel="noopener noreferrer" class="sub-cta-btn order-btn" data-astro-cid-emwdcask><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-emwdcask><circle cx="9" cy="21" r="1" data-astro-cid-emwdcask></circle><circle cx="20" cy="21" r="1" data-astro-cid-emwdcask></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" data-astro-cid-emwdcask></path></svg><span data-astro-cid-emwdcask>Orders</span></a><a href="tel:01475672330" class="sub-cta-btn" data-astro-cid-emwdcask><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-emwdcask><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" data-astro-cid-emwdcask></path></svg><span data-astro-cid-emwdcask>Telephone</span></a><a href="https://www.thethreereasons.co.uk" target="_blank" rel="noopener noreferrer" class="sub-cta-btn" data-astro-cid-emwdcask><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-emwdcask><circle cx="12" cy="12" r="10" data-astro-cid-emwdcask></circle><line x1="2" y1="12" x2="22" y2="12" data-astro-cid-emwdcask></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" data-astro-cid-emwdcask></path></svg><span data-astro-cid-emwdcask>Website</span></a><button type="button" id="toggle-hours-btn" class="sub-cta-btn" data-astro-cid-emwdcask><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-emwdcask><circle cx="12" cy="12" r="10" data-astro-cid-emwdcask></circle><polyline points="12 6 12 12 16 14" data-astro-cid-emwdcask></polyline></svg><span data-astro-cid-emwdcask>Opening Hours</span></button></div><!-- Main Trigger Pill --><button type="button" id="floating-main-trigger" class="floating-cta-btn" aria-expanded="false" aria-controls="floating-sub-actions" data-astro-cid-emwdcask><svg id="icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-emwdcask><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" data-astro-cid-emwdcask></path></svg><svg id="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: none;" data-astro-cid-emwdcask><line x1="18" y1="6" x2="6" y2="18" data-astro-cid-emwdcask></line><line x1="6" y1="6" x2="18" y2="18" data-astro-cid-emwdcask></line></svg><span id="trigger-label" data-astro-cid-emwdcask>Contact Details</span></button></div><script>
+  const wrapper = document.getElementById('floating-contact-wrapper');
+  const triggerBtn = document.getElementById('floating-main-trigger');
+  const subActions = document.getElementById('floating-sub-actions');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+  const triggerLabel = document.getElementById('trigger-label');
+  const hoursBtn = document.getElementById('toggle-hours-btn');
+  const hoursPopover = document.getElementById('opening-hours-popover');
+  const closeHoursBtn = document.getElementById('close-hours-btn');
+
+  let isOpen = false;
+
+  function setMenuState(open) {
+    isOpen = open;
+    if (!subActions || !triggerBtn) return;
+
+    subActions.classList.toggle('is-open', isOpen);
+    subActions.setAttribute('aria-hidden', String(!isOpen));
+    triggerBtn.setAttribute('aria-expanded', String(isOpen));
+
+    if (iconOpen && iconClose && triggerLabel) {
+      iconOpen.style.display = isOpen ? 'none' : 'block';
+      iconClose.style.display = isOpen ? 'block' : 'none';
+      triggerLabel.textContent = isOpen ? 'Close' : 'Contact Details';
+    }
+
+    if (!isOpen && hoursPopover) {
+      hoursPopover.hidden = true;
+    }
+  }
+
+  triggerBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    setMenuState(!isOpen);
+  });
+
+  hoursBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (hoursPopover) {
+      hoursPopover.hidden = !hoursPopover.hidden;
+    }
+  });
+
+  closeHoursBtn?.addEventListener('click', () => {
+    if (hoursPopover) hoursPopover.hidden = true;
+  });
+
+  document.addEventListener('click', (e) => {
+    if (isOpen && wrapper && !wrapper.contains(e.target)) {
+      setMenuState(false);
+    }
+  });
+</script></body></html>
