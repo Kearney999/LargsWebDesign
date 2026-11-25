@@ -4,7 +4,7 @@
       "smallPrice": null,
       "isHighlighted": false,
       "isGF": false,
-      "isV": true,
+      "isV": false,
       "largePrice": "4.50",
       "title": "Traditional Homemade Soup Of The Day",
       "id": "traditional-homemade-soup-of-the-day",
@@ -21,13 +21,13 @@
       "title": "North Atlantic Prawns",
       "id": "north-atlantic-prawns",
       "image": "/images/menu/PrawnCocktail.webp",
-      "description": "Available upon request. With Marie Rose sauce and wholemeal bread. Gluten free available on request.",
+      "description": "With Marie Rose sauce and wholemeal bread. Gluten free available on request.",
       "category": "Starters"
     },
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": false,
+      "isGF": true,
       "isV": true,
       "largePrice": "6.50",
       "title": "Buffalo Cauliflower",
@@ -39,7 +39,7 @@
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": false,
+      "isGF": true,
       "isV": false,
       "largePrice": "7.95",
       "title": "Garlic King Prawns",
@@ -51,7 +51,7 @@
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": false,
+      "isGF": true,
       "isV": false,
       "largePrice": "6.95",
       "title": "Chicken Wings",
@@ -255,7 +255,7 @@
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": false,
+      "isGF": true,
       "isV": true,
       "largePrice": "12.95",
       "title": "Salt 'n' Chilli Falafel Bites",
@@ -280,7 +280,7 @@
       "smallPrice": null,
       "isHighlighted": false,
       "isGF": false,
-      "isV": false,
+      "isV": true,
       "largePrice": "11.95",
       "title": "Chinese-Style Curry",
       "id": "chinese-style-curry",
@@ -291,8 +291,8 @@
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": true,
-      "isV": true,
+      "isGF": false,
+      "isV": false,
       "largePrice": "10.95",
       "title": "Traditional House Salad - Cheddar Cheese or Ayrshire Ham",
       "id": "traditional-house-salad-cheddar",
@@ -303,7 +303,7 @@
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": true,
+      "isGF": false,
       "isV": false,
       "largePrice": "12.95",
       "title": "Traditional House Salad - Prawn Marie Rose",
@@ -316,60 +316,60 @@
       "smallPrice": null,
       "isHighlighted": false,
       "isGF": false,
-      "isV": false,
+      "isV": true,
       "largePrice": "8.45",
       "title": "Classic Caesar",
       "id": "classic-caesar",
       "image": "",
-      "description": "Creamy dressing with lettuce, croutons and topped with shaved parmesan. Add grilled chicken breast £3.50, Add crispy bacon £1.50.",
+      "description": "Creamy dressing with lettuce, croutons and topped with shaved parmesan.",
       "category": "Traditional Favourites"
     },
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": true,
+      "isGF": false,
       "isV": false,
       "largePrice": "18.95",
       "title": "Mature Scottish Popeseye Steak",
       "id": "mature-scottish-popseye-steak",
       "image": "/images/menu/Popseye.webp",
-      "description": "Approx 200g, cooked medium. Please advise if you would like it cooked longer. Served with a grilled vegetable skewer or Caesar salad, a sauce of your choice and either a baked potato or chips.",
+      "description": "Approx 200g, cooked medium. Please advise if you would like it cooked longer.",
       "category": "Char Grill Specialities"
     },
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": true,
+      "isGF": false,
       "isV": false,
       "largePrice": "14.95",
       "title": "Grilled Chicken Breast",
       "id": "grilled-chicken-beast",
       "image": "",
-      "description": "Freshly cooked to order. Piri or Cajun add £1.00. Served with a grilled vegetable skewer or Caesar salad, a sauce of your choice and either a baked potato or chips.",
+      "description": "Piri or Cajun add £1.00.",
       "category": "Char Grill Specialities"
     },
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": true,
+      "isGF": false,
       "isV": false,
       "largePrice": "16.95",
       "title": "King Prawn Skewers",
       "id": "king-prawn-skewers",
       "image": "",
-      "description": "Freshly cooked to order. Piri or Cajun add £1.00. Served with a grilled vegetable skewer or Caesar salad, a sauce of your choice and either a baked potato or chips.",
+      "description": "Piri or Cajun add £1.00.",
       "category": "Char Grill Specialities"
     },
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": true,
+      "isGF": false,
       "isV": true,
       "largePrice": "12.95",
       "title": "Cauliflower Steak",
       "id": "cauliflower-steak",
       "image": "",
-      "description": "Freshly cooked to order. Piri or Cajun add £1.00. Served with a grilled vegetable skewer or Caesar salad, a sauce of your choice and either a baked potato or chips.",
+      "description": "Piri or Cajun add £1.00.",
       "category": "Char Grill Specialities"
     },
     {
@@ -381,7 +381,7 @@
       "title": "Steak Burger (4oz)",
       "id": "steak-burger-4oz",
       "image": "",
-      "description": "Uniquely seasoned and hand prepared for us by local butcher A.D. Paton. Served with salad, chips and side of coleslaw.",
+      "description": "Uniquely seasoned and hand prepared for us by local butcher A.D. Paton.",
       "category": "Burgers"
     },
     {
@@ -393,7 +393,7 @@
       "title": "Steak Burger (8oz)",
       "id": "steak-burger-8oz",
       "image": "",
-      "description": "Uniquely seasoned and hand prepared for us by local butcher A.D. Paton. Served with salad, chips and side of coleslaw.",
+      "description": "Uniquely seasoned and hand prepared for us by local butcher A.D. Paton.",
       "category": "Burgers"
     },
     {
@@ -405,7 +405,7 @@
       "title": "Chicken Breast Fillet Burger",
       "id": "chicken-breast-fillet-burger",
       "image": "",
-      "description": "Char-grilled to order, available plain or cajun. Served with salad, chips and side of coleslaw.",
+      "description": "Char-grilled to order, available plain or cajun.",
       "category": "Burgers"
     },
     {
@@ -417,7 +417,7 @@
       "title": "Buttermilk Fried Chicken Fillet Burger",
       "id": "buttermilk-fried-chicken-burger",
       "image": "",
-      "description": "Breaded chicken breast fillet. Served with salad, chips and side of coleslaw.",
+      "description": "Breaded chicken breast fillet.",
       "category": "Burgers"
     },
     {
@@ -429,7 +429,7 @@
       "title": "Moving Mountains Vegan Burger",
       "id": "moving-mountains-vegan-burger",
       "image": "",
-      "description": "Served with salad, chips and side of coleslaw.",
+      "description": "",
       "category": "Burgers"
     },
     {
@@ -441,7 +441,7 @@
       "title": "Signature Steak Flatbread",
       "id": "signature-flatbread",
       "image": "/images/menu/Flatbread.webp",
-      "description": "Shredded steak, onions, mushrooms and pepper sauce. All served with fries, coleslaw and salad garnish.",
+      "description": "Shredded steak, onions, mushrooms and pepper sauce.",
       "category": "Loaded Flat Breads"
     },
     {
@@ -453,7 +453,7 @@
       "title": "Chilli Cheese Steak Flatbread",
       "id": "chilli-cheese-steak-flatbread",
       "image": "",
-      "description": "Shredded steak, onions, peppers with chilli jam and melted mozzarella. All served with fries, coleslaw and salad garnish.",
+      "description": "Shredded steak, onions, peppers with chilli jam and melted mozzarella.",
       "category": "Loaded Flat Breads"
     },
     {
@@ -465,7 +465,7 @@
       "title": "South West Buttermilk Fried Chicken Flatbread",
       "id": "south-west-chicken-flatbread",
       "image": "",
-      "description": "Bacon, barbecue sauce and melted cheese. All served with fries, coleslaw and salad garnish.",
+      "description": "Bacon, barbecue sauce and melted cheese.",
       "category": "Loaded Flat Breads"
     },
     {
@@ -477,19 +477,19 @@
       "title": "Caribbean Chicken Flatbread",
       "id": "caribbean-chicken-flatbread",
       "image": "",
-      "description": "Shredded crispy chicken in a mango curry sauce. All served with fries, coleslaw and salad garnish.",
+      "description": "Shredded crispy chicken in a mango curry sauce.",
       "category": "Loaded Flat Breads"
     },
     {
       "smallPrice": null,
       "isHighlighted": false,
       "isGF": false,
-      "isV": false,
+      "isV": true,
       "largePrice": "12.95",
       "title": "Flamin' Fajitas Flatbread - Steak, Chicken or Veggie",
       "id": "flamin-fajitas-flatbread",
       "image": "",
-      "description": "Onions, peppers, mushrooms, salsa and cheese. All served with fries, coleslaw and salad garnish.",
+      "description": "Onions, peppers, mushrooms, salsa and cheese.",
       "category": "Loaded Flat Breads"
     },
     {
@@ -501,7 +501,7 @@
       "title": "Ayrshire Cheddar & Grilled Smoked Bacon",
       "id": "deli-cheddar-bacon",
       "image": "",
-      "description": "Ayrshire cheddar with grilled smoked bacon and chilli jam. Served in toasted ciabatta, gluten-free ciabatta or toasted bloomer bread with homemade coleslaw, freshly dressed salad and hand-cooked crisps.",
+      "description": "Ayrshire cheddar with grilled smoked bacon and chilli jam.",
       "category": "The Deli"
     },
     {
@@ -513,7 +513,7 @@
       "title": "Goat's Cheese with Caramelised Onion",
       "id": "deli-goats-cheese",
       "image": "",
-      "description": "Goat's cheese with caramelised onion. Served with homemade coleslaw, freshly dressed salad and hand-cooked crisps.",
+      "description": "Goat's cheese with caramelised onion.",
       "category": "The Deli"
     },
     {
@@ -525,7 +525,7 @@
       "title": "Grilled Cajun Chicken",
       "id": "deli-cajun-chicken",
       "image": "",
-      "description": "Grilled Cajun chicken with pickled peppers and mozzarella. Served with homemade coleslaw, freshly dressed salad and hand-cooked crisps.",
+      "description": "Grilled Cajun chicken with pickled peppers and mozzarella.",
       "category": "The Deli"
     },
     {
@@ -537,19 +537,19 @@
       "title": "Prawn Marie Rose",
       "id": "deli-prawn-marie-rose",
       "image": "",
-      "description": "Prawn Marie Rose with shredded iceberg lettuce. Served with homemade coleslaw, freshly dressed salad and hand-cooked crisps.",
+      "description": "Prawn Marie Rose with shredded iceberg lettuce.",
       "category": "The Deli"
     },
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": true,
+      "isGF": false,
       "isV": true,
       "largePrice": "5.50",
       "title": "Cheddar Cheese",
       "id": "deli-cheddar",
       "image": "",
-      "description": "Cheddar cheese. Add Ayrshire ham (£1.50). Add pickle, tomato or onion (£1.00). Served with homemade coleslaw, freshly dressed salad and hand-cooked crisps.",
+      "description": "Cheddar cheese. Add Ayrshire ham (£1.50). Add pickle, tomato or onion (£1.00).",
       "category": "The Deli"
     },
     {
@@ -561,26 +561,26 @@
       "title": "Fish Finger Sandwich",
       "id": "deli-fish-finger",
       "image": "",
-      "description": "Fresh haddock goujons, shredded iceberg lettuce and tartare sauce. Served with homemade coleslaw, freshly dressed salad and hand-cooked crisps.",
+      "description": "Fresh haddock goujons, shredded iceberg lettuce and tartare sauce.",
       "category": "The Deli"
     },
     {
       "smallPrice": null,
       "isHighlighted": false,
       "isGF": true,
-      "isV": true,
+      "isV": false,
       "largePrice": "7.50",
       "title": "Tomato, Pesto and Mozzarella",
       "id": "deli-tomato-pesto",
       "image": "",
-      "description": "Tomato, pesto and mozzarella. Served with homemade coleslaw, freshly dressed salad and hand-cooked crisps.",
+      "description": "Tomato, pesto and mozzarella.",
       "category": "The Deli"
     },
     {
       "smallPrice": null,
       "isHighlighted": false,
       "isGF": false,
-      "isV": true,
+      "isV": false,
       "largePrice": "5.95",
       "title": "Kids Menu",
       "id": "kids-menu",
@@ -591,8 +591,8 @@
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": true,
-      "isV": true,
+      "isGF": false,
+      "isV": false,
       "largePrice": "4.00",
       "title": "Side Order of Chips",
       "id": "chips-side",
@@ -603,8 +603,8 @@
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": true,
-      "isV": true,
+      "isGF": false,
+      "isV": false,
       "largePrice": "4.75",
       "title": "Cajun Chips",
       "id": "cajun-chips",
@@ -615,8 +615,8 @@
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": true,
-      "isV": true,
+      "isGF": false,
+      "isV": false,
       "largePrice": "5.50",
       "title": "Chips 'n' Cheese",
       "id": "chips-n-cheese",
@@ -627,8 +627,8 @@
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": true,
-      "isV": true,
+      "isGF": false,
+      "isV": false,
       "largePrice": "4.75",
       "title": "Salt 'n' Chilli Chips",
       "id": "salt-n-chilli-chips-side",
@@ -639,8 +639,8 @@
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": true,
-      "isV": true,
+      "isGF": false,
+      "isV": false,
       "largePrice": "3.50",
       "title": "Potatoes",
       "id": "potatoes",
@@ -651,8 +651,8 @@
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": true,
-      "isV": true,
+      "isGF": false,
+      "isV": false,
       "largePrice": "3.95",
       "title": "Fresh Vegetables",
       "id": "fresh-vegetables",
@@ -663,8 +663,8 @@
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": true,
-      "isV": true,
+      "isGF": false,
+      "isV": false,
       "largePrice": "3.00",
       "title": "Small Side Salad",
       "id": "small-side-salad",
@@ -675,8 +675,8 @@
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": true,
-      "isV": true,
+      "isGF": false,
+      "isV": false,
       "largePrice": "2.95",
       "title": "Homemade Coleslaw",
       "id": "homemade-coleslaw",
@@ -688,7 +688,7 @@
       "smallPrice": null,
       "isHighlighted": false,
       "isGF": false,
-      "isV": true,
+      "isV": false,
       "largePrice": "3.95",
       "title": "Garlic Bread",
       "id": "garlic-bread",
@@ -700,7 +700,7 @@
       "smallPrice": null,
       "isHighlighted": false,
       "isGF": false,
-      "isV": true,
+      "isV": false,
       "largePrice": "5.50",
       "title": "Garlic Bread with Mozzarella",
       "id": "garlic-bread-with-mozzarella",
@@ -711,8 +711,8 @@
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": true,
-      "isV": true,
+      "isGF": false,
+      "isV": false,
       "largePrice": "3.50",
       "title": "Jug of Sauce",
       "id": "jug-of-sauce",
@@ -723,8 +723,8 @@
     {
       "smallPrice": null,
       "isHighlighted": false,
-      "isGF": true,
-      "isV": true,
+      "isGF": false,
+      "isV": false,
       "largePrice": "1.25",
       "title": "Additional Dips",
       "id": "additional-dips",
@@ -736,7 +736,7 @@
       "smallPrice": null,
       "isHighlighted": false,
       "isGF": false,
-      "isV": true,
+      "isV": false,
       "largePrice": "1.50",
       "title": "Bread and Butter",
       "id": "bread-and-butter",
@@ -748,7 +748,7 @@
       "smallPrice": null,
       "isHighlighted": false,
       "isGF": false,
-      "isV": true,
+      "isV": false,
       "largePrice": "6.50",
       "title": "Seasonal Berry Sundae",
       "id": "seasonal-berry-sundae",
@@ -760,7 +760,7 @@
       "smallPrice": null,
       "isHighlighted": false,
       "isGF": false,
-      "isV": true,
+      "isV": false,
       "largePrice": "5.95",
       "title": "Caramel Apple Granny",
       "id": "caramel-apple-granny",
@@ -784,7 +784,7 @@
       "smallPrice": null,
       "isHighlighted": false,
       "isGF": false,
-      "isV": true,
+      "isV": false,
       "largePrice": "5.95",
       "title": "Sticky Toffee Pudding",
       "id": "sticky-toffee-pudding",
@@ -820,17 +820,17 @@
       "smallPrice": null,
       "isHighlighted": false,
       "isGF": true,
-      "isV": true,
+      "isV": false,
       "largePrice": "2.85",
       "title": "Dairy Ice Cream (1 Scoop)",
       "id": "dairy-ice-cream-1-scoop",
       "image": "",
-      "description": "1 Scoop £2.85. Additional scoops £2.00. Sauce or marshmallows £1.00.",
+      "description": "Additional scoops £2.00. Sauce or marshmallows £1.00.",
       "category": "Desserts"
     }
   ],
   "MenuSettings": {
-    "title": "Our Three Reasons Digital Menu",
+    "title": "The Three Reasons Digital Menu",
     "subtitle": "Search for your favourite ingredients, meals, or desserts. Or filter by category.",
     "tier": 2,
     "telephone": "01475 672330",
@@ -840,7 +840,6 @@
       "Mon–Sat: 11:00 – 19:00",
       "Sun: 12:30 – 19:00"
     ],
-
     "GeneralNotes": [
       "Gluten Free Freedom (GF) - Please note, dishes marked GF can be made gluten free on request only.",
       "Vegetarian (V) - Please make us aware of any special dietary requirements and we will do our best to assist you.",
@@ -901,16 +900,16 @@
           {
             "icon": "🥣",
             "title": "Soup of the Day",
-            "description": "Creamy Tomato & Basil served with warm sourdough bread.",
+            "description": "Please ask the staff, or refer to the daily specials board.",
             "show": false
           },
           {
             "icon": "🥩",
             "title": "Today's Specials Board",
-            "description": "Our Sunday roast is our signature dish today. Choose from Beef, Lamb or Turkey",
+            "description": "Please refer to our specials board for today's chef's specials.",
             "buttonText": "View Specials",
             "link": "#specials-modal",
-            "show": true
+            "show": false
           },
           {
             "icon": "🍷",
@@ -1017,7 +1016,7 @@
             "description": "The administration page for the manager of the business",
             "buttonText": "Update Backend",
             "link": "/ThreeReasons/admin",
-            "show": true
+            "show": false
           },
           {
             "icon": "👥",
@@ -1052,20 +1051,18 @@
             "icon": "🚕",
             "title": "Call a taxi",
             "description": "Taxi!, Find our very trusted and preferred taxi services. One button ring!",
-
             "Taxis": [
-            {
-              "name": "SK Taxis",
-              "phone": "07855 731298",
-              "note": "Three Reasons customers only"
-            },
-            {
-              "name": "The Three Reasons Cabs",
-              "phone": "01475 672330",
-              "note": "We'll pick you up!"
-            }
-          ],
-
+              {
+                "name": "SK Taxis",
+                "phone": "07855 731298",
+                "note": "Three Reasons customers only"
+              },
+              {
+                "name": "The Three Reasons Cabs",
+                "phone": "01475 672330",
+                "note": "We'll pick you up!"
+              }
+            ],
             "buttonText": "Taxis",
             "link": "#taxi-modal",
             "show": true
@@ -1120,7 +1117,6 @@
     },
     {
       "name": "Desserts"
-      
     }
   ]
 }
