@@ -904,6 +904,14 @@
             "show": false
           },
           {
+            "icon": "👥",
+            "title": "Opening Hours",
+            "description": "Food Hours - Mon-Sat 11:00-19:00, Sun 12:30-19:00. \nBar Hours - Mon-Sat 11:00-midnight, Sun 12:30-22:30.",
+            "buttonText": "",
+            "link": "",
+            "show": true
+          },
+          {
             "icon": "🥩",
             "title": "Today's Specials Board",
             "description": "Please refer to our specials board for today's chef's specials.",
